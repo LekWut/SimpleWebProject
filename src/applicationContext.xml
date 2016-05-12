@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:webflow="http://www.springframework.org/schema/webflow-config" xmlns:faces="http://www.springframework.org/schema/faces"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+   	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--     <context:property-placeholder location="classpath:applicationConfig.properties" /> -->
+	<context:component-scan base-package="com.dca, test.facade">
+		<context:exclude-filter type="regex" expression="com.dca.*.backingbean.*" />
+	</context:component-scan>
+	
+	<aop:aspectj-autoproxy />
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- JSF2 View Scope with Spring Core -->
+<!-- 	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer"> -->
+<!-- 		<property name="scopes"> -->
+<!-- 			<map> -->
+<!-- 				<entry key="view"> -->
+<!-- 					<bean class="com.dca.base.spring.scope.ViewScope" /> -->
+<!-- 				</entry> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"> -->
+<!-- 		<property name="jdbcUrl" value="jdbc:oracle:thin:@172.28.1.27:1521:SOAORCL" /> -->
+<!-- 		<property name="user" value="elicense_test" /> -->
+<!-- 		<property name="password" value="elicense" /> -->
+<!-- 		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" /> -->
+<!-- 		<property name="minPoolSize" value="5" /> -->
+<!-- 		<property name="maxPoolSize" value="20" /> -->
+<!-- 		<property name="acquireIncrement" value="1" /> -->
+<!-- 		<property name="idleConnectionTestPeriod" value="100" /> -->
+<!-- 		<property name="maxStatements" value="0" /> -->
+<!-- 		<property name="checkoutTimeout" value="600" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="jndiDataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!-- 		<property name="jndiName" value="java:comp/env/jdbc/eLicense" /> -->
+<!-- 		<property name="lookupOnStartup" value="false" /> -->
+<!-- 		<property name="cache" value="true" /> -->
+<!-- 		<property name="proxyInterface" value="javax.sql.DataSource" /> -->
+<!-- 	</bean>  -->
+	
+<!-- 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="comboPooledDataSource" /> -->
+<!-- 		<property name="mappingLocations"> -->
+<!-- 		<list> -->
+<!-- 			<value>classpath*:/com/dca/*/domain/*.hbm.xml</value> -->
+<!-- 		</list> -->
+<!-- 		</property> -->
+<!-- 		<property name="hibernateProperties"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</prop> -->
+<!-- 				<prop key="hibernate.defaCult_schema">ELICENSE_TEST</prop> -->
+<!-- 				<prop key="hibernate.show_sql">true</prop> -->
+<!-- 				<prop key="hibernate.format_sql">true</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">   -->
+<!--     	<property name="sessionFactory" ref="sessionFactory" /> -->
+<!--     </bean>   -->
+
+<!-- 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"> -->
+<!-- 		<property name="sessionFactory" ref="sessionFactory" /> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> -->
+<!-- 		<property name="host" value="mail.yipintsoi.com" /> -->
+<!-- 		<property name="username" value="sakchapr" /> -->
+<!-- 		<property name="password" value="" /> -->
+
+<!-- 		<property name="port" value="587" /> -->
+<!-- 		<property name="javaMailProperties"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="mail.smtp.auth">true</prop> -->
+<!-- 				<prop key="mail.smtp.starttls.enable">true</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+</beans>
