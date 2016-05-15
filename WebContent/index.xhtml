@@ -9,22 +9,19 @@
 	xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"
 	xmlns:p="http://primefaces.org/ui">
 	
-		<h:head>
+	<h:head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<title>Index Page</title>
 	</h:head>
 
-<h:body>
-	
-
-		
-		<h:panelGrid columns="1" style="margin:auto; margin-top:20px;">
-			<h:outputText value="MyTest JSF" style="font-size:40px; color:blue" />
-		</h:panelGrid>
-		
-		<p:outputLabel value="Test PF"/>
-		<p:panel header="Test"></p:panel>
-
-</h:body>
+	<h:body>
+		<h:form>
+			<p:panel header="Test">
+				<p:inputText value="#{bkHome.username}"/>
+				<p:password value="#{bkHome.username}"/>
+				<p:commandButton value="Login" action="#{bkHome.action_test}" update="@form"/>
+			</p:panel>
+		</h:form>
+	</h:body>
 
 </html>
